@@ -159,11 +159,10 @@ public class Register extends AppCompatActivity {
                                                            }).addOnFailureListener(new OnFailureListener() {
                                                        @Override
                                                        public void onFailure(@NonNull Exception e) {
-
                                                            Toast.makeText(Register.this,e.getMessage() , Toast.LENGTH_SHORT).show();
-
                                                        }
                                                    });
+
                                                    dialog.dismiss();
                                                } else {
 
@@ -187,8 +186,10 @@ public class Register extends AppCompatActivity {
                         public void onComplete(@NonNull Task<Void> task) {
 
                             if (task.isSuccessful()) {
+
                                 Toast.makeText(Register.this, "Verification ID sent !!", Toast.LENGTH_SHORT).show();
                                 Log.e("zodea", "sent bro !!");
+
                             } else {
                                 Toast.makeText(Register.this, "Error.. please try again ", Toast.LENGTH_LONG).show();
                             }
