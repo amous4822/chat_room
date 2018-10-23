@@ -28,8 +28,6 @@ public class ResendVerificationDialog extends DialogFragment {
 
     private EditText mPassword;
     private EditText mEmail;
-
-
     Context mContext;
 
     @Nullable
@@ -102,8 +100,8 @@ public class ResendVerificationDialog extends DialogFragment {
 
                             getDialog().dismiss();
 
-                            Toast.makeText(mContext, "Email verification Sent !!", Toast.LENGTH_SHORT).show();
                             sendUserVerification();
+                            Toast.makeText(mContext, "Email verification Sent !!", Toast.LENGTH_SHORT).show();
                             FirebaseAuth.getInstance().signOut();
 
                         }

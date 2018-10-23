@@ -14,6 +14,7 @@
         android:layout_gravity="center"
         android:textColor="@color/black"
         android:fontFamily="sans-serif"
+        android:layout_marginTop="10dp"
         />
 
     <EditText
@@ -45,6 +46,8 @@
             android:text="@string/cancel_dialog"
             android:fontFamily="sans-serif"
             android:textSize="21sp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="10dp"
             />
 
         <TextView
@@ -56,7 +59,8 @@
             android:layout_marginLeft="235dp"
             android:layout_marginTop="0dp"
             android:fontFamily="sans-serif"
-            android:text="@string/resend_confirm" />
+            android:text="@string/resend_confirm"
+            android:layout_marginRight="10dp"/>
 
     </RelativeLayout>
 
