@@ -1,7 +1,6 @@
 package com.example.project.chatvroom;
 
 
-
 import android.app.Activity;
 
 import android.app.ProgressDialog;
@@ -20,12 +19,15 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.project.chatvroom.models.User;
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.security.PrivilegedAction;
 
@@ -132,11 +134,37 @@ public class Register extends AppCompatActivity {
 
                                                    sendUserVerification();
                                                    Toast.makeText(Register.this, "Registration complete: " + FirebaseAuth.getInstance().getCurrentUser().getUid(), Toast.LENGTH_SHORT).show();
-                                                   FirebaseAuth.getInstance().signOut();
 
+                                                   User user = new User();
+                                                   user.setBms("-1");
+                                                   user.setName(mUsername.getText().toString());
+                                                   user.setProfile_pic("");
+                                                   user.setUser_id(FirebaseAuth.getInstance().getCurrentUser().getUid());
+                                                   user.setSecurity_level("1");
+
+                                                   FirebaseDatabase.getInstance().getReference()
+                                                           .child("users")
+                                                           .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
+                                                           .setValue(user)
+                                                           .addOnCompleteListener(new OnCompleteListener<Void>() {
+                                                               @Override
+                                                               public void onComplete(@NonNull Task<Void> task) {
+
+                                                                   if (task.isSuccessful()) {
+                                                                       Toast.makeText(Register.this, "Data registered successfully", Toast.LENGTH_SHORT).show();
+                                                                       FirebaseAuth.getInstance().signOut();
+                                                                       startActivity(new Intent(Register.this, Login.class));
+                                                                   }
+                                                               }
+                                                           }).addOnFailureListener(new OnFailureListener() {
+                                                       @Override
+                                                       public void onFailure(@NonNull Exception e) {
+
+                                                           Toast.makeText(Register.this,e.getMessage() , Toast.LENGTH_SHORT).show();
+
+                                                       }
+                                                   });
                                                    dialog.dismiss();
-                                                   startActivity(new Intent(Register.this, Login.class));
-
                                                } else {
 
                                                    dialog.dismiss();
@@ -158,10 +186,10 @@ public class Register extends AppCompatActivity {
                         @Override
                         public void onComplete(@NonNull Task<Void> task) {
 
-                            if (task.isSuccessful()){
+                            if (task.isSuccessful()) {
                                 Toast.makeText(Register.this, "Verification ID sent !!", Toast.LENGTH_SHORT).show();
-                                Log.e("zodea","sent bro !!");
-                            }else {
+                                Log.e("zodea", "sent bro !!");
+                            } else {
                                 Toast.makeText(Register.this, "Error.. please try again ", Toast.LENGTH_LONG).show();
                             }
                         }
