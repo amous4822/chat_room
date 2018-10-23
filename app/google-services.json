@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "126595659707",
+    "firebase_url": "https://chatvroom-291fd.firebaseio.com",
+    "project_id": "chatvroom-291fd",
+    "storage_bucket": "chatvroom-291fd.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:126595659707:android:fda89c2c43b60f3d",
+        "android_client_info": {
+          "package_name": "com.example.project.chatvroom"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "126595659707-6km13vnpl3ulg0fihcmuetep1ao5uhva.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.project.chatvroom",
+            "certificate_hash": "ecebe6beb4cb7b2e6c4207bb23353758d9f7cdd4"
+          }
+        },
+        {
+          "client_id": "126595659707-kc7ov592cuekck7hm988uske1aopiu67.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD2YF9SjczlAD7Gq0Z-xSchWbpRoeRc2a4"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "126595659707-kc7ov592cuekck7hm988uske1aopiu67.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

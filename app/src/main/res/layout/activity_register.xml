@@ -5,16 +5,24 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".Login">
+    tools:context=".LoginActivity">
 
     <EditText
         android:id="@+id/email_login"
         android:layout_width="289dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="160dp"
+        android:layout_marginTop="90dp"
         android:hint="@string/email"
-        android:inputType="textEmailAddress" />
+        android:inputType="textWebEmailAddress" />
+
+    <EditText
+        android:id="@+id/username_login"
+        android:layout_width="289dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:hint="@string/username" />
 
     <EditText
         android:id="@+id/password_login"
@@ -23,7 +31,16 @@
         android:layout_gravity="center"
         android:layout_marginTop="10dp"
         android:hint="@string/password"
-        android:inputType="textPassword" />
+        android:inputType="textWebPassword" />
+
+    <EditText
+        android:id="@+id/cnfr_password_login"
+        android:layout_width="289dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:hint="@string/confirm_password"
+        android:inputType="textWebPassword" />
 
     <Button
         android:id="@+id/login_button"
@@ -31,24 +48,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="40dp"
-        android:textColorHint="@color/colorPrimary"
         android:text="@string/login_button" />
-
-    <TextView
-        android:id="@+id/register_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/register"
-        android:layout_gravity="center"
-        android:layout_marginTop="30dp"/>
-
-    <TextView
-        android:id="@+id/resend_verify"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/resend_verification"
-        android:layout_gravity="center"
-        android:layout_marginTop="10dp"/>
 
 
 </LinearLayout>
