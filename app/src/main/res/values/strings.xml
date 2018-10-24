@@ -10,4 +10,6 @@
     <string name="confirm_password">Confirm Password</string>
     <string name="username">Username</string>
     <string name="title_activity_signed_in">SignedIn</string>
+    <string name="account_settings">Account Settings</string>
+    <string name="sign_out">Sign Out</string>
 </resources>
