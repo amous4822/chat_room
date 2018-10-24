@@ -16,7 +16,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Register"></activity>
+        <activity android:name=".Register" />
+        <activity
+            android:name=".SignedIn"
+            android:label="@string/title_activity_signed_in"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

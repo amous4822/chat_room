@@ -7,13 +7,11 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 
 import android.support.annotation.NonNull;
-import android.support.v4.content.Loader;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
-import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
@@ -23,13 +21,11 @@ import com.example.project.chatvroom.models.User;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
-import com.google.firebase.FirebaseApp;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.FirebaseDatabase;
 
-import java.security.PrivilegedAction;
 
 
 public class Register extends AppCompatActivity {
@@ -106,11 +102,9 @@ public class Register extends AppCompatActivity {
     private boolean testEmail(String email) {
         return email.contains(".") && email.contains("@");
     }
-
     private boolean isValid(String text) {
         return !TextUtils.isEmpty(text) && !text.contains(" ");
     }
-
     private boolean testPassword(String pass) {
         return pass.length() >= 6;
     }
@@ -196,14 +190,11 @@ public class Register extends AppCompatActivity {
                         }
                     });
         }
-
-
     }
 
     private void showProgress() {
         ProgressDialog dialog = ProgressDialog.show(this, "Loading", "Please wait...", true);
         dialog.dismiss();
     }
-
 
 }
