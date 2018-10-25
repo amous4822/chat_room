@@ -12,4 +12,5 @@
     <string name="title_activity_signed_in">SignedIn</string>
     <string name="account_settings">Account Settings</string>
     <string name="sign_out">Sign Out</string>
+    <string name="chat_menu">Chat</string>
 </resources>

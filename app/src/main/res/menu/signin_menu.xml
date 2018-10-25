@@ -5,10 +5,16 @@
     <item
         android:id="@+id/account_settings"
         android:title="@string/account_settings"
-        app:showAsAction="never" />
+        />
 
     <item
         android:title="@string/sign_out"
-        android:id="@+id/sign_out"/>
+        android:id="@+id/sign_out"
+        />
+
+    <item
+        android:title="@string/chat_menu"
+        android:id="@+id/chat"
+        />
 
 </menu>

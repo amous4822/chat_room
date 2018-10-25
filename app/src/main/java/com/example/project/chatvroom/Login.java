@@ -65,6 +65,10 @@ public class Login extends AppCompatActivity {
                                     @Override
                                     public void onComplete(@NonNull Task<AuthResult> task) {
                                         dialog.dismiss();
+
+                                        finish();
+                                        startActivity(new Intent(Login.this , SignedIn.class));
+
                                     }
                                 }).addOnFailureListener(new OnFailureListener() {
                             @Override
@@ -106,8 +110,6 @@ public class Login extends AppCompatActivity {
 
     }
 
-
-
     private boolean isValid(String text) {
         return !TextUtils.isEmpty(text) && !text.contains(" ");
     }
@@ -130,9 +132,10 @@ public class Login extends AppCompatActivity {
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
                 FirebaseUser user = firebaseAuth.getCurrentUser();
                 if (user != null) {
+
                     if (user.isEmailVerified()){
                         Toast.makeText(Login.this, "User logged in : " + user.getEmail(), Toast.LENGTH_SHORT).show();
-                        FirebaseAuth.getInstance().signOut();
+
                     } else{
                         Toast.makeText(Login.this, "Please verify your account: " + user.getEmail(), Toast.LENGTH_SHORT).show();
                         FirebaseAuth.getInstance().signOut();
